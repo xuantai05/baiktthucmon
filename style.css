@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    max-width: 991px; /* Giới hạn chiều rộng */
+    height: 100%; /* Chiều cao của trang phải đủ lớn */
+    min-height: 832px; /* Chiều cao tối thiểu của trang */
+    margin: 0 auto; /* Căn giữa trang */
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    width: 100%; /* Đảm bảo header không vượt quá chiều rộng */
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.header .banner {
+    flex: 1;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.header .banner img {
+    height: auto;
+    width: 80%;
+    max-width: 400px;
+    aspect-ratio: 4 / 1;
+    object-fit: cover;
+}
+
+.navbar {
+    background-color: #f50000;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #e20000;
+}
+
+.highlight-image {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.highlight-image img {
+    width: 100%;
+    max-height: 300px;
+    height: auto;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.main-content {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Chia đều các sản phẩm với độ rộng tối thiểu là 200px */
+    gap: 20px; /* Khoảng cách giữa các sản phẩm */
+    justify-items: center; /* Căn giữa các sản phẩm */
+    max-width: 100%;
+    flex-grow: 1; /* Nội dung chính chiếm không gian còn lại */
+}
+
+.product {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 200px; /* Kích thước sản phẩm đều nhau */
+    height: 250px; /* Đảm bảo tất cả các sản phẩm có chiều cao đồng đều */
+    margin: 0 auto;
+    overflow: hidden;
+    border: 2px solid white; /* Viền trắng xung quanh toàn bộ sản phẩm */
+    border-radius: 10px; /* Làm tròn góc */
+}
+
+.product img {
+    display: block;
+    width: 100%;
+    height: 100%; /* Đảm bảo hình ảnh chiếm đầy phần tử */
+    object-fit: cover; /* Cắt hình ảnh để phù hợp với kích thước */
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.product:hover img {
+    transform: scale(1.05); /* Khi hover vào ảnh, phóng to nhẹ */
+}
+
+.product .price {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Căn giữa phần giá */
+    background-color: rgba(196, 166, 166, 0.5); /* Nền mờ */
+
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0; /* Ẩn giá khi không hover */
+    transition: opacity 0.3s ease;
+    z-index: 1; /* Đảm bảo giá nằm trên ảnh */
+}
+
+.product:hover .price {
+    opacity: 1; /* Hiển thị giá khi hover vào sản phẩm */
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Chia thành 4 cột đồng đều */
+    gap: 20px; /* Khoảng cách giữa các phần tử */
+    width: 100%;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-subscribe h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-subscribe input {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.footer-subscribe button {
+    padding: 10px;
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-subscribe button:hover {
+    background-color: #a80000;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        grid-template-columns: 1fr; /* Đặt tất cả các mục thành một cột trên màn hình nhỏ */
+    }
+
+    .footer-section, .footer-subscribe {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-subscribe input {
+        width: 80%;
+    }
+
+    .navbar a {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .main-content img {
+        max-width: 120px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+}
+
